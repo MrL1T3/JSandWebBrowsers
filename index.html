@@ -7,35 +7,44 @@
 </head>
 <body>
   <h1>What Progamming Language is best for your needs?</h1>
-  <p>What level of language are you comfotable learning? <select id="question1">
+  <p>What level of language are you comfotable learning? <select id="questionOne">
       <option></option>
       <option></option>
       <option></option>
     </select>
   </p>
-  <p>What are you hoping to use your programs for? <select id="question2">
+  <p>What are you hoping to use your programs for? <select id="questionTwo">
       <option></option>
       <option></option>
       <option></option>
     </select>
   </p>
-  <p>How powerful do you need your language to be? <select id="question3">
+  <p>How powerful do you need your language to be? <select id="questionThree">
       <option></option>
       <option></option>
       <option></option>
     </select>
   </p>
-  <p>What's your favorite animal out of a Snake, a Cat and a Bird?<select id="question4">
+  <p>What's your favorite animal out of a Snake, a Cat and a Bird?<select id="questionFour">
       <option></option>
       <option></option>
       <option></option>
     </select>
   </p>
-  <p>Which do you enjoy the most, Music, Fiction or Food?<select id="question5">
+  <p>Which do you enjoy the most, Music, Fiction or Food?<select id="questionFive">
       <option></option>
       <option></option>
       <option></option>
     </select>
   </p>
+  <button id="btn">get selected index</button>
+  <script>
+    const btn = document.querySelector('#btn');
+    const sb = document.querySelector('#questionOne')
+    btn.onclick = (event) => {
+      event.preventDefault();
+      alert(sb.selectedIndex);
+    };
+  </script>
 </body>
 </html>
