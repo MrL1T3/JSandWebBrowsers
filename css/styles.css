@@ -16,6 +16,8 @@ select {
 .answer {
   font-style: italic;
   color: blue;
+  margin-top: 40px;
+  margin-bottom: 25px;
 }
 
 .question {
