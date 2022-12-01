@@ -5,7 +5,15 @@ let result = ""
 
 window.onload=function(){
 
-  function AnswerCount() {
+  const qOne = document.getElementById('questionOne');
+  const qTwo = document.getElementById('questionTwo');
+  const qThree = document.getElementById('questionThree');
+  const qFour = document.getElementById('questionFour');
+  const qFive = document.getElementById('questionFive');
+  const btn = document.getElementById('btn');
+  const collect = document.getElementById('check-index');
+
+  function answerCount() {
     const question = document.activeElement;
     if (question.selectedIndex === 0)
       jsCount ++;
@@ -14,12 +22,34 @@ window.onload=function(){
     else 
       cSharpCount ++;
     console.log(jsCount, pythonCount, cSharpCount);
-    };
+  };
 
-  function currentSelection(){
-    let elem = document.activeElement;
-    let sel_index = elem.selectedIndex;
-    console.log(sel_index);
+  function currentSelection(evt){
+    let indexList = [];
+    const elem1 = qOne;
+    const elem2 = qTwo;
+    const elem3 = qThree;
+    const elem4 = qFour;
+    const elem5 = qFive;
+    let sel_index1 = elem1.selectedIndex;
+    let sel_index2 = elem2.selectedIndex;
+    let sel_index3 = elem3.selectedIndex;
+    let sel_index4 = elem4.selectedIndex;
+    let sel_index5 = elem5.selectedIndex;
+    console.log(sel_index1, sel_index2, sel_index3, sel_index4, sel_index5);
+    indexList.push(sel_index1, sel_index2, sel_index3, sel_index4, sel_index5);
+    console.log(indexList);
+    indexList.forEach(element => {
+      if (element === 0)
+      jsCount ++;
+    else if (element === 1)
+      pythonCount ++;
+    else 
+      cSharpCount ++;
+    });
+    console.log(jsCount, pythonCount, cSharpCount);
+    evt.preventDefault();
+    return false;
   }
 
   function displayResult(evt) {
@@ -36,11 +66,11 @@ window.onload=function(){
     return false;
   }
 
-  let qOne = document.getElementById('questionOne');
-  let btn = document.getElementById('btn')
+
   qOne.addEventListener('change', function() {console.log(this.value);}, false);
-  qOne.addEventListener('change', function () {AnswerCount();});
+  qOne.addEventListener('change', function () {answerCount();});
   btn.addEventListener('click', displayResult);
+  collect.addEventListener('click', currentSelection);
   //document.getElementById('result-space').innerHTML = result;
 };  
 
