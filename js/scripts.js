@@ -6,7 +6,6 @@ let result = ""
 window.onload=function(){
   let indexList = [];
   const btn = document.getElementById('btn');
-  const collect = document.getElementById('collect-answers');
 
   function answerCount() {
     const question = document.activeElement;
@@ -19,7 +18,7 @@ window.onload=function(){
     console.log(jsCount, pythonCount, cSharpCount);
   };
 
-  function collectIndex(evt){
+  function collectIndex(){
     const allSelects = document.getElementsByTagName('select')
     for (let element of allSelects) {
       elemIndex = element.selectedIndex
@@ -27,11 +26,12 @@ window.onload=function(){
       indexList.push(elemIndex)
     }
     console.log(indexList);
-    evt.preventDefault();
     return false;
   }
 
   function currentSelection(evt){
+    collectIndex();
+
     indexList.forEach(element => {
       if (element === 0)
       jsCount ++;
@@ -59,6 +59,5 @@ window.onload=function(){
     
   }
 
-  collect.addEventListener('click', collectIndex);
   btn.addEventListener('click',currentSelection);
 };
