@@ -7,17 +7,6 @@ window.onload=function(){
   let indexList = [];
   const btn = document.getElementById('btn');
 
-  function answerCount() {
-    const question = document.activeElement;
-    if (question.selectedIndex === 0)
-      jsCount ++;
-    else if (question.selectedIndex === 1)
-      pythonCount ++;
-    else 
-      cSharpCount ++;
-    console.log(jsCount, pythonCount, cSharpCount);
-  };
-
   function collectIndex(){
     const allSelects = document.getElementsByTagName('select')
     for (let element of allSelects) {
