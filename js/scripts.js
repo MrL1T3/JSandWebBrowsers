@@ -21,11 +21,11 @@ window.onload=function(){
 
     indexList.forEach(element => {
       if (element === 0)
-      jsCount ++;
-    else if (element === 1)
-      pythonCount ++;
-    else 
-      cSharpCount ++;
+        jsCount ++;
+      else if (element === 1)
+        pythonCount ++;
+      else 
+        cSharpCount ++;
     });
     if (jsCount > pythonCount && jsCount > cSharpCount)
       result = "JavaScript is your Language!"
