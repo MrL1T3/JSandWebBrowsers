@@ -7,3 +7,8 @@ select {
   color: darkblue;
   font-style: italic;
 }
+
+.answer {
+  font-style: italic;
+  color: blue;
+}
