@@ -1,19 +1,26 @@
-window.onload=function(){
-  let jsCount = 0;
-  let pythonCount = 0;
-  let cSharpCount = 0;
-  let result = ""
+let jsCount = 0;
+let pythonCount = 0;
+let cSharpCount = 0;
+let result = ""
 
-  function questionOne() {
-    let qOne = document.getElementById("questionOne");
-    if (qOne.selectedIndex === 1)
+window.onload=function(){
+
+  function AnswerCount() {
+    const question = document.activeElement;
+    if (question.selectedIndex === 0)
       jsCount ++;
-    else if (qOne.selectedIndex === 2)
+    else if (question.selectedIndex === 1)
       pythonCount ++;
     else 
       cSharpCount ++;
     console.log(jsCount, pythonCount, cSharpCount);
     };
+
+  function currentSelection(){
+    let elem = document.activeElement;
+    let sel_index = elem.selectedIndex;
+    console.log(sel_index);
+  }
 
   function displayResult(evt) {
     if (jsCount > pythonCount && jsCount > cSharpCount)
@@ -25,27 +32,26 @@ window.onload=function(){
     else 
       result = "Try again with a little more thought, we didn't get enough specifics"
     console.log(result);
-
-    handleSelections();
-    
     evt.preventDefault();
     return false;
   }
 
-  let a = document.getElementById('questionOne');
-  let b = document.getElementById('btn')
-  a.addEventListener('change', function() {console.log(this.value);}, false);
-  a.addEventListener('change', function () {questionOne();});
-  b.addEventListener('click', displayResult);
-  document.getElementById('result-space').innerHTML = result;
+  let qOne = document.getElementById('questionOne');
+  let btn = document.getElementById('btn')
+  qOne.addEventListener('change', function() {console.log(this.value);}, false);
+  qOne.addEventListener('change', function () {AnswerCount();});
+  btn.addEventListener('click', displayResult);
+  //document.getElementById('result-space').innerHTML = result;
 };  
 
-function handleSelections() {
-  let elem = document.getElementById("questionOne");
-  let sel_index = elem.selectedIndex;
-  let sel_text = elem.options[sel_index].text;
-  console.log(`selected index is ${sel_index} text is ${sel_text}`);
-}
+// function handleSelections() {
+//   let elem1 = document.getElementById("questionOne");
+//   let sel_index = elem1.selectedIndex;
+//   let sel_text = elem1.options[sel_index].text;
+//   console.log(`selected index is ${sel_index} text is ${sel_text}`);
+// }
+
+
   // const btn = document.querySelector('btn');
   // document.querySelectorAll('select').addEventListener('click', function(){alert(result);});
   // document.getElementById('btn').addEventListener('click', function(){(result);});
