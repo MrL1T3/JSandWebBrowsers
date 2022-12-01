@@ -1,3 +1,9 @@
 .hidden {
   display: none;
 }
+
+select {
+  text-align: left;
+  color: darkblue;
+  font-style: italic;
+}
