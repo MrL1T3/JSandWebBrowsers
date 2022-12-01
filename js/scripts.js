@@ -11,10 +11,8 @@ window.onload=function(){
     const allSelects = document.getElementsByTagName('select')
     for (let element of allSelects) {
       elemIndex = element.selectedIndex
-      console.log(elemIndex)
       indexList.push(elemIndex)
     }
-    console.log(indexList);
     return false;
   }
 
@@ -29,7 +27,6 @@ window.onload=function(){
     else 
       cSharpCount ++;
     });
-    console.log(jsCount, pythonCount, cSharpCount);
     if (jsCount > pythonCount && jsCount > cSharpCount)
       result = "JavaScript is your Language!"
     else if (pythonCount > jsCount && pythonCount > cSharpCount)
