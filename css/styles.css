@@ -12,3 +12,8 @@ select {
   font-style: italic;
   color: blue;
 }
+
+.question {
+  font-weight: 600;
+  color: darkgreen;
+}
