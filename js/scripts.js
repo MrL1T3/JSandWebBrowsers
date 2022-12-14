@@ -1,8 +1,3 @@
-let jsCount = 0;
-let pythonCount = 0;
-let cSharpCount = 0;
-let result = ""
-
 window.onload=function(){
   let indexList = [];
   const btn = document.getElementById('btn');
@@ -17,6 +12,10 @@ window.onload=function(){
   }
 
   function currentSelection(evt){
+    let jsCount = 0;
+    let pythonCount = 0;
+    let cSharpCount = 0;
+    let result = ""
     collectIndex();
 
     indexList.forEach(element => {
